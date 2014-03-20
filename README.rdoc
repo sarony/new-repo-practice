@@ -1,0 +1,65 @@
+== To Doo-dee-doo
+
+Stuff to do for this nascent app.
+
+Basic Idea:
+
+* Models:
+* Organization
+* User
+
+* Survey
+
+class Survey
+belongs_to :speaker
+has_many :questions
+has_many :responses, through: :questions
+
+* Question
+
+class Question
+belongs_to :survey
+-- body
+
+* Response
+belongs_to :question
+belongs_to :survey, through: :questions
+-- answer
+
+* Speaker
+-- name
+-- presentation_title
+-- deck
+-- video
+-- email
+-- twitter
+-- job_title
+-- company
+-- github
+
+class Organization
+has_many :invitees, class: user
+belongs_to :owner, class: user
+has_many :speakers
+
+* User
+
+* 
+
+* Configuration
+
+* Database creation
+
+* Database initialization
+
+* How to run the test suite
+
+* Services (job queues, cache servers, search engines, etc.)
+
+* Deployment instructions
+
+* ...
+
+
+Please feel free to use a different markup language if you do not plan to run
+<tt>rake doc:app</tt>.
